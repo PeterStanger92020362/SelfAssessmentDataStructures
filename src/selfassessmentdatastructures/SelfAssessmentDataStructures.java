@@ -6,11 +6,16 @@
 package selfassessmentdatastructures;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeMap;
 
 /**
  *
@@ -47,7 +52,7 @@ public class SelfAssessmentDataStructures {
         */
         
         
-        
+        /*
         //Stacks
         
         Scanner entry = new Scanner(System.in);
@@ -72,9 +77,52 @@ public class SelfAssessmentDataStructures {
             }
 
         }
+        */
         
         
         
+        //DeQueues
+        
+        Deque<Integer> firstQueue = new LinkedList<>();
+        Deque<Integer> secondQueue = new LinkedList<>();
+        Deque<Integer> thirdQueue = new LinkedList<>();
+        
+        
+        for (int i = 0; i <= 10; i++) {
+            firstQueue.add(i);
+            secondQueue.add(i);
+            thirdQueue.add(i);
+        }
+        
+        System.out.println("Print out the three queues:");
+        System.out.println(firstQueue);
+        System.out.println(secondQueue);
+        System.out.println(thirdQueue + "\n");
+        
+        
+        Iterator fQIterator = firstQueue.iterator();
+        Iterator sQIterator = secondQueue.iterator();
+        Iterator tQIterator = thirdQueue.iterator();
+        
+        while (!thirdQueue.isEmpty()){
+            while(fQIterator.hasNext()){
+                System.out.println(firstQueue.pop());
+            }
+            System.out.println("\nFirst Queue is empty!");
+            System.out.println("Finishing work in other queues - oldest to newest\n");
+            while(sQIterator.hasNext()) {
+                System.out.println(secondQueue.removeLast());
+            }
+            while(tQIterator.hasNext()) {
+                System.out.println(thirdQueue.removeLast());
+            }
+            
+        }
+
+        System.out.println("\nConfirming all three queues are empty?: " 
+                + "\nFirst Queue: " + firstQueue.isEmpty() 
+                + "\nSecond Queue:" + secondQueue.isEmpty() 
+                + "\nThird Queue: " + thirdQueue.isEmpty());
         
     }
     
